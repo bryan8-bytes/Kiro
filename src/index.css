@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #0a0a0f;
+  --color-purple: #8b5cf6;
+  --color-pink: #ec4899;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  --color-purple-400: #c084fc;
+  --color-purple-500: #8b5cf6;
+}
+
+@layer base {
+  body {
+    color: var(--color-gray-800);
+    background-color: #f0f9ff;
+    font-family: 'Nunito', system-ui, sans-serif;
+    background-image: radial-gradient(circle at 10% 20%, rgba(186, 230, 253, 0.4) 0%, rgba(255, 255, 255, 0) 80%);
+  }
+  
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgba(10, 10, 15, 0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #c084fc;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #c084fc;
+    opacity: 0.7;
+  }
+}
+
+@layer components {
+  .glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+  }
+  .glass-card {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+    border-radius: 1rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  .glass-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+  }
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+    border-color: rgba(236, 72, 153, 0.3);
+  }
+}
