@@ -62,7 +62,7 @@ const Login = ({ onLoginSuccess }) => {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden font-sans text-slate-800 px-4">
+    <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden font-sans text-slate-800 px-4 bg-sky-100">
       {/* Fondo de Video Animado */}
       <div className="absolute inset-0 z-[-1] overflow-hidden pointer-events-none fixed w-full h-full left-0 top-0">
         <video 
