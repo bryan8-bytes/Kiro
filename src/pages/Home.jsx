@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Music, User, Heart, ArrowRight, Book, Clock } from 'lucide-react'
+import { Music, User, Heart, ArrowRight, Book, Clock, Film, Tv } from 'lucide-react'
 
 // Video de fondo
 import bgVideo from '../assets/fondo.mp4'
@@ -11,6 +11,8 @@ const diarioImg = 'https://media1.tenor.com/m/1z09XoEOnccAAAAC/cinnamoroll-sanri
 const myProfileImg = 'https://media1.tenor.com/m/P5EJALTMklMAAAAC/cinnamoroll.gif'
 const musicImg = 'https://media1.tenor.com/m/KGhFXJaFRNEAAAAC/sanrio-sanrio-characters.gif'
 const recuerdosImg = 'https://media1.tenor.com/m/KOcnNt3Q4HIAAAAC/cinnamoroll-icinnamoroll.gif'
+const movieImg = 'https://media.tenor.com/M-HGDm38fIUAAAAd/tenor.gif'
+const seriesImg = 'https://media.tenor.com/KFwflWuS6ZAAAAAd/tenor.gif'
 
 // Custom hook para el reloj en tiempo real
 const useTime = () => {
@@ -425,6 +427,76 @@ const Home = () => {
                   <p className="text-slate-500 font-medium text-lg line-clamp-1 drop-shadow-sm">
                     {profile?.quote || 'Descubre más sobre la esencia de Kiro.'}
                   </p>
+                </div>
+              </div>
+            </TiltCard>
+          </div>
+
+          {/* Tarjeta Película */}
+          <div className="h-72 sm:h-80 w-full">
+            <TiltCard 
+              to="/movie" 
+              className=""
+              bgContent={
+                <>
+                  <img 
+                    src={movieImg} 
+                    alt="Película Cinnamoroll"
+                    className="block w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-sky-300/20 group-hover:bg-sky-400/20 transition-colors duration-500 mix-blend-overlay pointer-events-none" />
+                </>
+              }
+            >
+              <div className="relative z-10 p-8 sm:p-10 flex flex-col justify-between h-full">
+                <div className="flex justify-between items-start">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-indigo-400 flex items-center justify-center shadow-[0_0_20px_rgba(56,189,248,0.4)] group-hover:scale-110 transition-transform duration-500 border border-white/60">
+                    <Film className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-white/60 border border-white/80 flex items-center justify-center backdrop-blur-md group-hover:bg-white transition-colors">
+                    <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-slate-600 group-hover:-rotate-45 transition-all" />
+                  </div>
+                </div>
+
+                <div className="mt-8 drop-shadow-sm">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-700 mb-2 drop-shadow-sm">La Película</h2>
+                  <p className="text-slate-500 font-medium text-lg">Prepara las palomitas y disfruta.</p>
+                </div>
+              </div>
+            </TiltCard>
+          </div>
+
+          {/* Tarjeta Serie */}
+          <div className="h-72 sm:h-80 w-full">
+            <TiltCard 
+              to="/series" 
+              className=""
+              bgContent={
+                <>
+                  <img 
+                    src={seriesImg} 
+                    alt="Serie Cinnamoroll"
+                    className="block w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-amber-200/20 group-hover:bg-amber-300/20 transition-colors duration-500 mix-blend-overlay pointer-events-none" />
+                </>
+              }
+            >
+              <div className="relative z-10 p-8 sm:p-10 flex flex-col justify-between h-full">
+                <div className="flex justify-between items-start">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 flex items-center justify-center shadow-[0_0_20px_rgba(251,191,36,0.4)] group-hover:scale-110 transition-transform duration-500 border border-white/60">
+                    <Tv className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-white/60 border border-white/80 flex items-center justify-center backdrop-blur-md group-hover:bg-white transition-colors">
+                    <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-slate-600 group-hover:-rotate-45 transition-all" />
+                  </div>
+                </div>
+
+                <div className="mt-8 drop-shadow-sm">
+                  <h2 className="text-3xl sm:text-4xl font-bold text-slate-700 mb-2 drop-shadow-sm">La Serie</h2>
+                  <p className="text-slate-500 font-medium text-lg">Capítulos llenos de aventuras suaves.</p>
                 </div>
               </div>
             </TiltCard>

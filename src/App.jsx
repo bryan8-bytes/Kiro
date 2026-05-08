@@ -8,6 +8,8 @@ import Profile from './pages/Profile'
 import Memories from './pages/Memories'
 import Diary from './pages/Diary'
 import Login from './pages/Login'
+import Movie from './pages/Movie'
+import Series from './pages/Series'
 import React, { useState } from 'react'
 import { MusicProvider } from './context/MusicContext'
 import GlobalMusicPlayer from './components/GlobalMusicPlayer'
@@ -56,6 +58,8 @@ function AnimatedRoutes() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/memories" element={<Memories />} />
         <Route path="/diary" element={<Diary />} />
+        <Route path="/movie" element={<Movie />} />
+        <Route path="/series" element={<Series />} />
       </Routes>
     </AnimatePresence>
   )
